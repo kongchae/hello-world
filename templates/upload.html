@@ -1,0 +1,17 @@
+{% extends "movie_input/base.html" %}
+
+{% block content %}
+    <h2 align = Center>Add person to address book </h2>
+    {% csrf_token %}
+        <form action="" method="POST">
+            <p> <br><br></p>
+            <p align = Center><input type="search" class="span3" placeholder="title" name="title" id="search" autofocus /> </p>
+            <p align = Center><input type="file" class="span3" name="movie_path" placeholder="movie_path" id="search" autofocus /> </p>
+            <p align = Center><button type="submit" class="btn btn-primary btn-large pull-center">Add &raquo;</button></p>
+        </form>
+
+{% endblock content %}
+
+
+
+    <!-- { form.as_p } -->

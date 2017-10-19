@@ -1,0 +1,11 @@
+{% extends "base_movie.html" %}
+
+{% block content %}
+
+<h1>{{ object.title }}</h1>
+    {% load static %}
+<img src="{% static object.movie_path %}" alt={{ object.title }} />
+<li>movie_path: {{ object.movie_path }}</li>
+
+
+{% endblock content %}

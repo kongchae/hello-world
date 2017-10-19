@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded</title>
+</head>
+<body>
+
+이거 잘못씀.... 절대 클릭/다운받지 마세요...하하하 ==>
+    <a id="id_uploaded_file" href="{ movie.file.movie_path }" download>{ movie.file.title }</a>
+
+{% block content %}
+
+<h1>{{ object.title }}</h1>
+    {% load static %}
+<img src="{% static object.movie_path %}" alt={{ object.title }} />
+
+{% endblock content %}
+
+
+</body>
+</html>
