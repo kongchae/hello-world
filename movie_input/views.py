@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 
-#--- TemplateView
+# --- TemplateView
 class MovieInputModelView(TemplateView):
 
     template_name = 'movie_input/index.html'
@@ -35,10 +35,10 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('/success/url/')
-    else:
+            return HttpResponseRedirect('/uploaded/')
+    else:  # GET 요청이 도착하면 빈 폼 객체를 생성
         form = UploadFileForm()
-    return render(request, 'movie_input/../../../templates/upload.html', {'form': form})
+    return render(request, 'movie_input/../../../templates/upload.html', {'form': form}) # 해당 URL을 처음 방문 시 일어나는 동작
 
 
 def handle_uploaded_file(f):

@@ -6,4 +6,5 @@ urlpatterns = [
 
     url(r'^movie/$', views.MovieList.as_view(), name='movie_list'), # /movie_input/movie/
     url(r'^movie/(?P<pk>\d+)/$', views.MovieDetail.as_view(), name='movie_detail'), # /movie_input/movie/3
+    # url(r'^movie/$', views.MovieList.as_view(), name='movie_list'),
 ]

@@ -4,9 +4,39 @@
     <h2>test Django Applications</h2>
     <ul>
         {% for appname in object_list %}
-{% with appname|add:":"|add:"index" as urlvar %}
-            <li><a href="{% url urlvar %}">{{ appname }}</a></li>
-{% endwith %}
+            {% with appname|add:":"|add:"index" as urlvar %}
+                <li><a href="{% url urlvar %}">{{ appname }}</a></li>
+            {% endwith %}
         {% endfor %}
     </ul>
+
+
+    <div class="topnav" id="myTopnav">
+        <a href="/html/">분류결과</a> |
+        <a href="/css/">영상등록 및 분류</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div style="padding-left:16px">
+      <h2>Responsive Topnav Example</h2>
+      <p>Resize the browser window to see how it works.</p>
+    </div>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+
+    <nav>
+        <a href="/html/">분류결과</a> |
+        <a href="/css/">영상등록 및 분류</a>
+    </nav>
+
 {% endblock content %}

@@ -23,8 +23,9 @@ urlpatterns = [
     url(r'^admin/', views.ShowMovieFile.as_view(), name='showFile'),
     url(r'^admin/(?P<pk>\d+)/$', views.InAdminMovieDetail.as_view(), name='in_admin_movie_detail'), # /movie_input/movie/3
 
+    url(r'^search$', views.SearchView.as_view(), name='search'),
+    url(r'^home$', views.HomeView.as_view(), name='home'),
 
-    url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^movie_input/', include('movie_input.urls', namespace="movie_input")),
 ]
 
